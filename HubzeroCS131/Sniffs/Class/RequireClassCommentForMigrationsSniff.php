@@ -44,21 +44,30 @@ class HubzeroCS131_Sniffs_Class_RequireClassCommentForMigrationsSniff implements
 			return;
 		}
 
+		$docTokens  = array(
+			T_COMMENT,
+			T_DOC_COMMENT_STAR,
+			T_DOC_COMMENT_WHITESPACE,
+			T_DOC_COMMENT_TAG,
+			T_DOC_COMMENT_OPEN_TAG,
+			T_DOC_COMMENT_CLOSE_TAG,
+			T_DOC_COMMENT_STRING
+		);
 		$commentEnd = $phpcsFile->findPrevious($find, ($stackPtr - 1), null, true);
-		if ($tokens[$commentEnd]['code'] !== T_COMMENT && $tokens[$commentEnd]['code'] !== T_DOC_COMMENT)
+		if (!in_array($tokens[$commentEnd]['code'], $docTokens))
 		{
 			$phpcsFile->addError('Missing migration class doc comment', $stackPtr, 'Missing');
 			return;
 		}
 
 		// Get doc block comment
-		$commentLocation = $phpcsFile->findNext(T_DOC_COMMENT, $commentEnd - 1, $commentEnd + 1);
+		$commentLocation = $phpcsFile->findPrevious(T_DOC_COMMENT_STRING, $commentEnd);
 		$commentString   = $tokens[$commentLocation]['content'];
 
 		// Make sure its not default from stub
 		if (preg_match("/Migration\\sscript\\sfor\\s\.\.\./", $commentString))
 		{
-			$phpcsFile->addError('Please complete migration doc block comment.', 'Missing');
+			$phpcsFile->addError('Please complete migration doc block comment.', $stackPtr, 'Missing');
 			return;
 		}
 	}
