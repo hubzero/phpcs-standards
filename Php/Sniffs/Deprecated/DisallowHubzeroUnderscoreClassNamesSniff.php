@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_Deprecated_DisallowHubzeroUnderscoreClassNamesSniff
+ * package   frameworkSniffs_Deprecated_DisallowHubzeroUnderscoreClassNamesSniff
  *
  * Ensure no use of 'Hubzero_*' class names are reintroduced
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCS130_Sniffs_Deprecated_DisallowHubzeroUnderscoreClassNamesSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_Deprecated_DisallowHubzeroUnderscoreClassNamesSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen

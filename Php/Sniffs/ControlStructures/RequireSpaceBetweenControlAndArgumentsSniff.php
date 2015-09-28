@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff
+ * package   frameworkSniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff
  *
  * Control structure declarations must have one space between it and it's arguments
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCS130_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen
