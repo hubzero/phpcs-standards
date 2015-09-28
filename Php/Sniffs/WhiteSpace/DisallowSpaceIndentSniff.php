@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_WhiteSpace_DisallowSpaceIndentSniff
+ * Sniffs_WhiteSpace_DisallowSpaceIndentSniff
  *
  * Throws errors if spaces and tabs are incorrectly interspersed for indentation
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCS131_Sniffs_WhiteSpace_DisallowSpaceIndentSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_WhiteSpace_DisallowSpaceIndentSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen

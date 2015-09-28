@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff
+ * Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff
  *
- * Control structure declarations must have one space between it and it's arguments
+ * No blank lines allowed that contain any form of indentation
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCS131_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen
@@ -17,15 +17,7 @@ class HubzeroCS131_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumen
 	 */
 	public function register()
 	{
-		return array(
-			T_IF,
-			T_ELSEIF,
-			T_SWITCH,
-			T_CASE,
-			T_FOR,
-			T_FOREACH,
-			T_CATCH
-		);
+		return array(T_WHITESPACE);
 	}
 
 	/**
@@ -41,10 +33,16 @@ class HubzeroCS131_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumen
 	{
 		$tokens = $phpcsFile->getTokens();
 
-		if ($tokens[$stackPtr + 1]['content'] != ' ')
+		// Make sure the line is only white space
+		if ($stackPtr > 0 && $tokens[($stackPtr - 1)]['line'] === $tokens[$stackPtr]['line'])
 		{
-			$error = 'Control structures must have a space between the element and its argument(s).';
-			$phpcsFile->addError($error, $stackPtr, 'ControlStructureSpace');
+			return;
+		}
+
+		if (preg_match('/^[\s]+(\n|\r\n)+/', $tokens[$stackPtr]['content']))
+		{
+			$error = 'Blank lines containing indentation are not allowed.';
+			$phpcsFile->addError($error, $stackPtr, 'IndentedBlankLine');
 		}
 	}
 }
