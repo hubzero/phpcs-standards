@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff
+ * package   frameworkSniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff
  *
  * No blank lines allowed that contain any form of indentation
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCS200_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen
