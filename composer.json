@@ -1,0 +1,10 @@
+{
+    "name": "hubzero/phpcs-standards",
+    "description": "The HUBzero PHP Coding Standards",
+    "keywords": ["php", "hubzero", "standards", "style", "guide"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "squizlabs/php_codesniffer": "2.*"
+    }
+}
