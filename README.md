@@ -1,5 +1,6 @@
-# phpcs-standards
-PHP Code Sniffer Standards for HUBzero
+# standards
+
+Coding Standards for HUBzero Development
 
 This package provides the PHP Code Sniffer standards for code formatting and documentation to individuals and teams contributing to the HUBzero Framework or CMS.
 
