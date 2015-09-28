@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff
+ * Php_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff
  *
- * No trailing white spaces allowed at the end of lines
+ * Control structure declarations must have one space between it and it's arguments
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCSmaster_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_ControlStructures_RequireSpaceBetweenControlAndArgumentsSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen
@@ -17,7 +17,15 @@ class HubzeroCSmaster_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff implemen
 	 */
 	public function register()
 	{
-		return array(T_WHITESPACE);
+		return array(
+			T_IF,
+			T_ELSEIF,
+			T_SWITCH,
+			T_CASE,
+			T_FOR,
+			T_FOREACH,
+			T_CATCH
+		);
 	}
 
 	/**
@@ -33,10 +41,10 @@ class HubzeroCSmaster_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff implemen
 	{
 		$tokens = $phpcsFile->getTokens();
 
-		if (preg_match('/[\s]+(\n|\r\n)/', $tokens[$stackPtr]['content']))
+		if ($tokens[$stackPtr + 1]['content'] != ' ')
 		{
-			$error = 'Trailing white space is not allowed.';
-			$phpcsFile->addError($error, $stackPtr, 'TrailingSpaces');
+			$error = 'Control structures must have a space between the element and its argument(s).';
+			$phpcsFile->addError($error, $stackPtr, 'ControlStructureSpace');
 		}
 	}
 }

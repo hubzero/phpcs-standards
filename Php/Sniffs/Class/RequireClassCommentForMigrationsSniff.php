@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_Class_RequireClassCommentForMigrationsSniff
+ * Php_Sniffs_Class_RequireClassCommentForMigrationsSniff
  *
  * Must have doc block for migrations
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCSmaster_Sniffs_Class_RequireClassCommentForMigrationsSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_Class_RequireClassCommentForMigrationsSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens this test wants to listen for.

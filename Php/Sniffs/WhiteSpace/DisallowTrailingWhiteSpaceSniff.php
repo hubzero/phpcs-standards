@@ -1,14 +1,14 @@
 <?php
 /**
- * HubzeroCS_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff
+ * Php_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff
  *
- * No blank lines allowed that contain any form of indentation
+ * No trailing white spaces allowed at the end of lines
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class HubzeroCSmaster_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff implements PHP_CodeSniffer_Sniff
+class Php_Sniffs_WhiteSpace_DisallowTrailingWhiteSpaceSniff implements PHP_CodeSniffer_Sniff
 {
 	/**
 	 * Returns an array of tokens for which this test wants to listen
@@ -33,16 +33,10 @@ class HubzeroCSmaster_Sniffs_WhiteSpace_DisallowBlankLinesWithSpacesSniff implem
 	{
 		$tokens = $phpcsFile->getTokens();
 
-		// Make sure the line is only white space
-		if ($stackPtr > 0 && $tokens[($stackPtr - 1)]['line'] === $tokens[$stackPtr]['line'])
+		if (preg_match('/[\s]+(\n|\r\n)/', $tokens[$stackPtr]['content']))
 		{
-			return;
-		}
-
-		if (preg_match('/^[\s]+(\n|\r\n)+/', $tokens[$stackPtr]['content']))
-		{
-			$error = 'Blank lines containing indentation are not allowed.';
-			$phpcsFile->addError($error, $stackPtr, 'IndentedBlankLine');
+			$error = 'Trailing white space is not allowed.';
+			$phpcsFile->addError($error, $stackPtr, 'TrailingSpaces');
 		}
 	}
 }

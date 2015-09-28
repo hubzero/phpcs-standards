@@ -1,6 +1,6 @@
 {
-    "name": "hubzero/phpcs-standards",
-    "description": "The HUBzero PHP Coding Standards",
+    "name": "hubzero/standards",
+    "description": "Coding Standards for HUBzero Development",
     "keywords": ["php", "hubzero", "standards", "style", "guide"],
     "license": "MIT",
     "require": {
