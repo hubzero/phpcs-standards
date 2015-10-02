@@ -3,8 +3,64 @@
  <description>The HUBzero coding standards code sniffer implementation.</description>
 
  <!-- Include some sniffs from all around the place -->
+ <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+ <rule ref="Generic.Files.OneClassPerFile"/>
+ <rule ref="Generic.Files.OneInterfacePerFile"/>
+ <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+ <rule ref="Generic.Functions.CallTimePassByReference"/>
  <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+ <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+ <!--<rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>-->
+ <!--<rule ref="Generic.NamingConventions.ConstructorName"/>-->
+ <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+ <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+ <rule ref="Generic.PHP.DeprecatedFunctions"/>
  <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+ <rule ref="Generic.PHP.LowerCaseConstant"/>
+ <rule ref="Generic.PHP.LowerCaseKeyword"/>
+ <!--<rule ref="Generic.Strings.UnnecessaryStringConcat"/>-->
+
+ <rule ref="PEAR.Classes.ClassDeclaration"/>
+ <!--<rule ref="PEAR.Commenting.ClassComment"/>-->
+ <!--<rule ref="PEAR.Commenting.FileComment"/>-->
+ <!--<rule ref="PEAR.Commenting.FunctionComment"/>-->
+ <rule ref="PEAR.Commenting.InlineComment"/>
+ <!--<rule ref="PEAR.Functions.FunctionCallSignature"/>-->
+ <!--<rule ref="PEAR.Functions.ValidDefaultValue"/>-->
+ <!--<rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>-->
+
+ <rule ref="PSR1.Classes.ClassDeclaration"/>
+ <rule ref="PSR1.Files.SideEffects"/>
+
+ <!--<rule ref="PSR2.Classes.ClassDeclaration"/>-->
+ <!--<rule ref="PSR2.Classes.PropertyDeclaration"/>-->
+ <rule ref="PSR2.ControlStructures.ControlStructureSpacing"/>
+ <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
+ <rule ref="PSR2.Files.EndFileNewline"/>
+ <rule ref="PSR2.Methods.MethodDeclaration"/>
+ <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+ <rule ref="PSR2.Namespaces.UseDeclaration"/>
+
+ <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+ <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+ <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+ <rule ref="Squiz.Classes.SelfMemberReference"/>
+ <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+ <!--<rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>-->
+ <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+ <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
+ <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
+ <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
+ <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
+ <rule ref="Squiz.Scope.StaticThisUsage"/>
+ <rule ref="Squiz.Strings.EchoedStrings"/>
+ <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+ <!--<rule ref="Squiz.WhiteSpace.FunctionOpeningBrace"/>-->
+ <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+ <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+ <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+ <rule ref="Zend.Files.ClosingTag"/>
 
  <!-- Lines can be 120 chars long, no absolute limit at the moment -->
  <rule ref="Generic.Files.LineLength">
