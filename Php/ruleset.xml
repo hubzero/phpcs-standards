@@ -76,4 +76,11 @@
    <property name="eolChar" value="\n"/>
   </properties>
  </rule>
+
+ <!-- Forbid some functions -->
+ <rule ref="Generic.PHP.ForbiddenFunctions">
+  <properties>
+   <property name="forbiddenFunctions" type="array" value="sizeof=>count,error_log=>null,var_dump=>null,dlog=>null,print_r=>null"/>
+  </properties>
+ </rule>
 </ruleset>
