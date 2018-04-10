@@ -29,7 +29,7 @@
  <!--<rule ref="PEAR.Functions.ValidDefaultValue"/>-->
  <!--<rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>-->
 
- <rule ref="PSR1.Classes.ClassDeclaration"/>
+ <!--<rule ref="PSR1.Classes.ClassDeclaration"/>-->
  <rule ref="PSR1.Files.SideEffects"/>
 
  <!--<rule ref="PSR2.Classes.ClassDeclaration"/>-->
@@ -38,8 +38,8 @@
  <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
  <rule ref="PSR2.Files.EndFileNewline"/>
  <rule ref="PSR2.Methods.MethodDeclaration"/>
- <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
- <rule ref="PSR2.Namespaces.UseDeclaration"/>
+ <!--<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>-->
+ <!--<rule ref="PSR2.Namespaces.UseDeclaration"/>-->
 
  <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
  <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
@@ -74,6 +74,13 @@
  <rule ref="Generic.Files.LineEndings">
   <properties>
    <property name="eolChar" value="\n"/>
+  </properties>
+ </rule>
+
+ <!-- Forbid some functions -->
+ <rule ref="Generic.PHP.ForbiddenFunctions">
+  <properties>
+   <property name="forbiddenFunctions" type="array" value="sizeof=>count,error_log=>null,var_dump=>null,dlog=>null,print_r=>null"/>
   </properties>
  </rule>
 </ruleset>
