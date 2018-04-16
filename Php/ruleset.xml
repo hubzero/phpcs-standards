@@ -79,6 +79,7 @@
 
  <!-- Forbid some functions -->
  <rule ref="Generic.PHP.ForbiddenFunctions">
+ 	<exclude-pattern>*/Debug/Dumper/*</exclude-pattern>
   <properties>
    <property name="forbiddenFunctions" type="array" value="sizeof=>count,error_log=>null,var_dump=>null,dlog=>null,print_r=>null"/>
   </properties>
