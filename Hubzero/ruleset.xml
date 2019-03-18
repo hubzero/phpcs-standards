@@ -30,7 +30,7 @@
  <!--<rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>-->
 
  <!--<rule ref="PSR1.Classes.ClassDeclaration"/>-->
- <rule ref="PSR1.Files.SideEffects"/>
+ <!--rule ref="PSR1.Files.SideEffects"/>-->
 
  <!--<rule ref="PSR2.Classes.ClassDeclaration"/>-->
  <!--<rule ref="PSR2.Classes.PropertyDeclaration"/>-->
