@@ -13,6 +13,7 @@ namespace PHP_CodeSniffer\Standards\Hubzero\Sniffs\Classes;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Util\Tokens;
 
 class RequireClassCommentForMigrationsSniff implements Sniff
 {
@@ -38,7 +39,7 @@ class RequireClassCommentForMigrationsSniff implements Sniff
 	public function process(File $phpcsFile, $stackPtr)
 	{
 		$tokens = $phpcsFile->getTokens();
-		$find   = PHP_CodeSniffer_Tokens::$methodPrefixes;
+		$find   = Tokens::$methodPrefixes;
 		$find[] = T_WHITESPACE;
 
 		// Get class name
