@@ -8,7 +8,13 @@
  * @package   standards
  * @author    Sam Wilson <samwilson@purdue.edu>
  */
-class Php_Sniffs_Class_RequireClassCommentForMigrationsSniff implements PHP_CodeSniffer_Sniff
+
+namespace PHP_CodeSniffer\Standards\Hubzero\Sniffs\Classes;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
+class RequireClassCommentForMigrationsSniff implements Sniff
 {
 	/**
 	 * Returns an array of tokens this test wants to listen for.
@@ -24,12 +30,12 @@ class Php_Sniffs_Class_RequireClassCommentForMigrationsSniff implements PHP_Code
 	/**
 	 * Processes this test, when one of its tokens is encountered.
 	 *
-	 * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+	 * @param File $phpcsFile The file being scanned.
 	 * @param int                  $stackPtr  The position of the current token in the stack passed in $tokens.
 	 *
 	 * @return void
 	 */
-	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr)
 	{
 		$tokens = $phpcsFile->getTokens();
 		$find   = PHP_CodeSniffer_Tokens::$methodPrefixes;
